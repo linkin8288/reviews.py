@@ -8,7 +8,11 @@ with open('reviews.txt', 'r') as f: # 讀取txt檔案當作f
 		if count % 100000 == 0: # 每讀100000筆資料印出來，%是求餘數
 			print(len(data))
 
-print(len(data)) # 讀取長度
-print(data[0]) # 將清單中的第一筆數據印出來-索引
-print('---------------')
-print(data[1])
+print('檔案讀取玩了，總共有', len(data), '筆資料') # 讀取長度
+
+# 找每筆留言的平均長度
+# 每筆資料就叫做d
+sum_len = 0 # 總留言長度 = 0
+for d in data:
+	sum_len = sum_len + len(d) # 將目前的長度加上資料的長度，再存回目前的長度
+print('每筆留言的平均長度是', sum_len/len(data)) # 每筆留言的平均長度
